@@ -1,6 +1,6 @@
 %define name xarchon
 %define version 0.50
-%define release 13mdk
+%define release %mkrel 14
 
 Name: %{name}
 Summary: X ARCHON is a strange game of chess
@@ -9,6 +9,7 @@ Release: %{release}
 Source: %{name}-%{version}.tar.bz2
 Patch0:	xarchon-fonts.patch.bz2
 Patch1: xarchon-0.50-gcc34.patch.bz2
+Patch2: xarchon-gcc-fix.patch
 Group: Games/Boards
 URL: http://xarchon.seul.org/
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -29,7 +30,8 @@ you have a very small taste of Archon.
 %setup -q
 
 %patch0 -p1
-%patch1 -p0
+%patch1 -p0 -b .gcc34-fix
+%patch2 -p0 -b .gcc-fix
 
 %build
 
@@ -53,9 +55,24 @@ title="Xarchon" \
 longtitle="Clone of ARCHON game" \
 icon="boards_section.png" \
 needs="x11" \
-section="More applications/Games/Boards"
+section="More applications/Games/Boards" \
+xdg="true"
 EOF
 )
+
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%{title}
+Comment=Clone of ARCHON game
+Exec=%{_bindir}/%{name} 
+Icon=%{name}
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=X-MandrivaLinux-MoreApplications-Games-Boards
+EOF
  
 %post
 %{update_menus}
@@ -75,3 +92,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %_gamesdatadir/xarchon/
 %_gamesdatadir/xarchon/*
 %_menudir/*
+%{_datadir}/applications/mandriva-%{name}.desktop
