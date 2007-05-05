@@ -16,6 +16,7 @@ BuildRoot: %{_tmppath}/%{name}-buildroot
 License: GPL
 BuildRequires: esound-devel
 BuildRequires: gtk-devel
+BuildRequires: xpm-devel
 
 %description 
 X ARCHON is a clone of the golden oldie ARCHON game created by Freewall
