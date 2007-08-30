@@ -71,7 +71,7 @@ Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Games-Boards
+Categories=X-MandrivaLinux-MoreApplications-Games-Boards;
 EOF
  
 %post
