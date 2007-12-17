@@ -12,7 +12,6 @@ Patch1: xarchon-0.50-gcc34.patch.bz2
 Patch2: xarchon-gcc-fix.patch
 Group: Games/Boards
 URL: http://xarchon.seul.org/
-BuildRoot: %{_tmppath}/%{name}-buildroot
 License: GPL
 BuildRequires: esound-devel
 BuildRequires: gtk-devel
