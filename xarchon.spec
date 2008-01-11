@@ -46,20 +46,6 @@ you have a very small taste of Archon.
 rm -rf $RPM_BUILD_ROOT
 %makeinstall bindir=$RPM_BUILD_ROOT%{_gamesbindir} datadir=$RPM_BUILD_ROOT%{_gamesdatadir}
 
-(cd $RPM_BUILD_ROOT
-mkdir -p ./usr/lib/menu
-cat > ./usr/lib/menu/%{name} <<EOF
-?package(%{name}): \
-command="/usr/games/xarchon" \
-title="Xarchon" \
-longtitle="Clone of ARCHON game" \
-icon="boards_section.png" \
-needs="x11" \
-section="More applications/Games/Boards" \
-xdg="true"
-EOF
-)
-
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
 [Desktop Entry]
@@ -90,5 +76,4 @@ rm -rf $RPM_BUILD_ROOT
 %_mandir/man6/*
 %dir %_gamesdatadir/xarchon/
 %_gamesdatadir/xarchon/*
-%_menudir/*
 %{_datadir}/applications/mandriva-%{name}.desktop
