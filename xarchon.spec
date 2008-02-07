@@ -1,18 +1,18 @@
 %define name xarchon
 %define version 0.50
-%define release %mkrel 14
+%define release %mkrel 15
 
 Name: %{name}
 Summary: X ARCHON is a strange game of chess
 Version: %{version}
 Release: %{release}
-Source: %{name}-%{version}.tar.bz2
-Patch0:	xarchon-fonts.patch.bz2
-Patch1: xarchon-0.50-gcc34.patch.bz2
+Source: http://xarchon.seul.org/%{name}-%{version}.tar.bz2
+Patch0:	xarchon-fonts.patch
+Patch1: xarchon-0.50-gcc34.patch
 Patch2: xarchon-gcc-fix.patch
 Group: Games/Boards
 URL: http://xarchon.seul.org/
-License: GPL
+License: GPLv2+
 BuildRequires: esound-devel
 BuildRequires: gtk-devel
 BuildRequires: xpm-devel
@@ -26,20 +26,15 @@ until one of the pieces is dead. Combine with spells and fantastic units, an
 you have a very small taste of Archon.
 
 %prep
-
 %setup -q
-
 %patch0 -p1
 %patch1 -p0 -b .gcc34-fix
 %patch2 -p0 -b .gcc-fix
 
 %build
-
 %configure --bindir=%{_gamesbindir} \
            --datadir=%{_gamesdatadir} \
            --disable-rpath
-
-
 %make
 
 %install
@@ -49,14 +44,14 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
 [Desktop Entry]
-Name=%{title}
+Name=XArchon
 Comment=Clone of ARCHON game
-Exec=%{_bindir}/%{name} 
+Exec=%{_gamesbindir}/%{name} 
 Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Games-Boards;
+Categories=BoardGame;Game;GTK;
 EOF
  
 %post
@@ -65,7 +60,6 @@ EOF
 %postun
 %{clean_menus}
                    
-
 %clean
 rm -rf $RPM_BUILD_ROOT 
 
