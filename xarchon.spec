@@ -11,6 +11,7 @@ Patch0:	xarchon-fonts.patch
 Patch1: xarchon-0.50-gcc34.patch
 Patch2: xarchon-gcc-fix.patch
 Group: Games/Boards
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL: http://xarchon.seul.org/
 License: GPLv2+
 BuildRequires: esound-devel
