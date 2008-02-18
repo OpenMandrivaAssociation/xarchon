@@ -3,7 +3,7 @@
 %define release %mkrel 15
 
 Name: %{name}
-Summary: X ARCHON is a strange game of chess
+Summary: Strange game of chess
 Version: %{version}
 Release: %{release}
 Source: http://xarchon.seul.org/%{name}-%{version}.tar.bz2
