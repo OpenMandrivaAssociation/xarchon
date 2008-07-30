@@ -1,6 +1,6 @@
 %define name xarchon
 %define version 0.50
-%define release %mkrel 16
+%define release %mkrel 18
 
 Name: %{name}
 Summary: Strange game of chess
