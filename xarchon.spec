@@ -10,6 +10,7 @@ Source: http://xarchon.seul.org/%{name}-%{version}.tar.bz2
 Patch0:	xarchon-fonts.patch
 Patch1: xarchon-0.50-gcc34.patch
 Patch2: xarchon-gcc-fix.patch
+Patch3: xarchon-0.50-gcc43.patch
 Group: Games/Boards
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL: http://xarchon.seul.org/
@@ -17,6 +18,7 @@ License: GPLv2+
 BuildRequires: esound-devel
 BuildRequires: gtk-devel
 BuildRequires: xpm-devel
+Buildrequires: imagemagick
 
 %description 
 X ARCHON is a clone of the golden oldie ARCHON game created by Freewall
@@ -31,6 +33,7 @@ you have a very small taste of Archon.
 %patch0 -p1
 %patch1 -p0 -b .gcc34-fix
 %patch2 -p0 -b .gcc-fix
+%patch3 -p1 -b .gcc43
 
 %build
 %configure --bindir=%{_gamesbindir} \
@@ -54,6 +57,9 @@ Type=Application
 StartupNotify=true
 Categories=BoardGame;Game;GTK;
 EOF
+
+mkdir -p %buildroot%_iconsdir
+convert data/icon.xpm %buildroot%_iconsdir/%name.png
  
 %if %mdkversion < 200900
 %post
@@ -75,4 +81,5 @@ rm -rf $RPM_BUILD_ROOT
 %_mandir/man6/*
 %dir %_gamesdatadir/xarchon/
 %_gamesdatadir/xarchon/*
+%_iconsdir/%name.png
 %{_datadir}/applications/mandriva-%{name}.desktop
