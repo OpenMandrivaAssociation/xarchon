@@ -1,0 +1,19 @@
+diff -up xarchon-0.50/src/Genetic.hpp~ xarchon-0.50/src/Genetic.hpp
+--- xarchon-0.50/src/Genetic.hpp~	2008-01-11 22:40:09.000000000 +0100
++++ xarchon-0.50/src/Genetic.hpp	2008-01-11 22:40:09.000000000 +0100
+@@ -2,6 +2,7 @@
+ #define GENETIC_HPP
+ 
+ #include <list>
++#include <stdlib.h>
+ using namespace std;
+ 
+ /* **********************************************
+diff -up xarchon-0.50/src/Xarchon_Problem.cpp~ xarchon-0.50/src/Xarchon_Problem.cpp
+--- xarchon-0.50/src/Xarchon_Problem.cpp~	2008-01-11 22:40:27.000000000 +0100
++++ xarchon-0.50/src/Xarchon_Problem.cpp	2008-01-11 22:40:27.000000000 +0100
+@@ -1,3 +1,4 @@
++#include <string.h>
+ #include "Xarchon_Problem.hpp"
+ #include "Xarchon_Interface.hpp"
+ 

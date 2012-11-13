@@ -1,0 +1,28 @@
+Index: src/Xarchon_Genetic.hpp
+===================================================================
+--- src/Xarchon_Genetic.hpp
++++ src/Xarchon_Genetic.hpp	2007-05-05 18:38:23.000000000 +0200
+@@ -82,8 +82,8 @@
+   Xarchon_Genetic_Generation *gg;
+ public:
+   Xarchon_Evolution(char *test,char *pop,int num);
+-  Genetic_Population<Xarchon_Goal_Test> *Xarchon_Evolution::Operate(Genetic_Population<Xarchon_Goal_Test> *p);
+-  Genetic_Population<Xarchon_Goal_Test> *Xarchon_Evolution::Operate(void);
++  Genetic_Population<Xarchon_Goal_Test> *Operate(Genetic_Population<Xarchon_Goal_Test> *p);
++  Genetic_Population<Xarchon_Goal_Test> *Operate(void);
+   virtual ~Xarchon_Evolution(void);
+ };
+ 
+Index: src/board.c
+===================================================================
+--- src/board.c
++++ src/board.c	2007-05-05 18:37:32.000000000 +0200
+@@ -166,7 +166,7 @@
+ 
+ int board_turn;
+ 
+-static int board_frame_time = 0;
++int board_frame_time = 0;
+ 
+ /*--------------------------------------------------------------------------*/
+ /* spells                                                                   */
