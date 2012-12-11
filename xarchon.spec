@@ -83,3 +83,100 @@ rm -rf $RPM_BUILD_ROOT
 %_gamesdatadir/xarchon/*
 %_iconsdir/%name.png
 %{_datadir}/applications/mandriva-%{name}.desktop
+
+
+%changelog
+* Sun Sep 20 2009 Thierry Vignaud <tvignaud@mandriva.com> 0.50-20mdv2010.0
++ Revision: 445868
+- rebuild
+
+* Mon Apr 06 2009 Funda Wang <fundawang@mandriva.org> 0.50-19mdv2009.1
++ Revision: 364348
+- add gcc 43 patch
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - rebuild
+    - rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Mon Feb 18 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.50-16mdv2008.1
++ Revision: 171181
+- rebuild
+- fix "foobar is blabla" summary (=> "blabla") so that it looks nice in rpmdrake
+- fix no-buildroot-tag
+
+* Thu Feb 07 2008 Funda Wang <fundawang@mandriva.org> 0.50-15mdv2008.1
++ Revision: 163379
+- bunzip patches
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - drop old menu
+    - kill re-definition of %%buildroot on Pixel's request
+    - kill desktop-file-validate's error: string list key "Categories" in group "Desktop Entry" does not have a semicolon (";") as trailing character
+    - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+* Sat May 05 2007 Olivier Thauvin <nanardon@mandriva.org> 0.50-14mdv2008.0
++ Revision: 23244
+- path2: more gcc fix
+- xdg menu
+- Import xarchon
+
+
+
+* Sun Jul 18 2004 Michael Scherer <misc@mandrake.org> 0.50-13mdk 
+- rebuild for new gcc, patch 0
+
+* Tue Dec 16 2003 Lenny Cartier <lenny@mandrakesoft.com> 0.50-12mdk
+- fix paths
+
+* Thu Jul 31 2003 Götz Waschk <waschk@linux-mandrake.com> 0.50-11mdk
+- add buildrequires
+
+* Wed Jan 29 2003 Lenny Cartier <lenny@mandrakesoft.com> 0.50-10mdk
+- rebuild
+
+* Thu Sep 26 2002 Lenny Cartier <lenny@mandrakesoft.com> 0.50-9mdk
+- patch0: fix call to missing fonts in board.c and field.c
+
+* Thu Sep 05 2002 Lenny Cartier <lenny@mandrakesoft.com> 0.50-8mdk
+- rebuild
+
+* Fri May 31 2002  Lenny Cartier <lenny@mandrakesoft.com> 0.50-7mdk
+- rebuild against new libstdc++
+
+* Tue Dec 25 2001 David BAUDENS <baudens@mandrakesoft.com> 0.50-6mdk
+- Use standard icon for menu
+
+* Fri Aug 24 2001 Etienne Faure <etienne@mandrakesoft.com> 0.50-5mdk
+- rebuild
+
+* Thu Feb 15 2001 Lenny Cartier <lenny@mandrakesoft.com> 0.50-4mdk
+- rebuild
+
+* Wed Sep 20 2000 Lenny Cartier <lenny@mandrakesoft.com> 0.50-3mdk
+- fix install that was sooo crappy
+- menu && bm && macros
+
+* Thu May 04 2000 Lenny Cartier <lenny@mandrakesoft.com> 0.50-2mdk
+- fix group
+
+* Mon Dec 06 1999 Lenny Cartier <lenny@mandrakesoft.com>
+- Upgrade to 0.50 version.
+
+* Tue Oct 19 1999 Lenny Cartier <lenny@mandrakesoft.com>
+- Upgrade to 0.42 version.
+
+* Thu Oct 07 1999 Lenny Cartier <lenny@mandrakesoft.com>
+- Little adaptations of the specfile
+
+* Sun Sep 26 1999 Sean P. Kane <spkane@home.com>
+- Created First Xarchon RPM
+
+* Fri Aug 06 1999 Stefan Siegel <siegel@informatik.uni-kl.de>
+- Added "config" tag for files containing /etc or /config
+- Added compression for perl- and localized man-pages
+
+* Sat Jun 26 1999 Bernhard Rosenkraenzer <bero@mandrakesoft.com>
+- create (more or less) generic spec file...
