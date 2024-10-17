@@ -13,7 +13,7 @@ Patch2: xarchon-gcc-fix.patch
 Patch3: xarchon-0.50-gcc43.patch
 Group: Games/Boards
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-URL: http://xarchon.seul.org/
+URL: https://xarchon.seul.org/
 License: GPLv2+
 BuildRequires: esound-devel
 BuildRequires: gtk-devel
