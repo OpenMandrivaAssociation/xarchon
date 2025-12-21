@@ -15,6 +15,11 @@ Group: Games/Boards
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL: https://xarchon.seul.org/
 License: GPLv2+
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: esound-devel
 BuildRequires: gtk-devel
 BuildRequires: xpm-devel
